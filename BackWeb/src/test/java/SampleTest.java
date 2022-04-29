@@ -7,6 +7,7 @@ class SampleTest {
 
     @Test
     public void sampleTesting(){
+        System.out.println("test");
         Assertions.assertTrue(true);
     }
 
