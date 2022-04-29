@@ -2,7 +2,7 @@ spring:
   application:
     name: backempresa
   datasource:
-    url: jdbc:mysql://localhost:3306/virtualtravelempresa
+    url: jdbc:mysql://db:3306/virtualtravelempresa
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -14,12 +14,12 @@ spring:
       ddl-auto: update
   cloud:
     consul:
-      host: 127.0.0.1
+      host: consul
       port: 8500
       discovery:
         instance-id: "${spring.application.name}-${random.uuid}"
         health-check-path: /
   rabbitmq:
-    addresses: localhost:5672
+    addresses: rabbitmq:5672
 server:
   port: 0

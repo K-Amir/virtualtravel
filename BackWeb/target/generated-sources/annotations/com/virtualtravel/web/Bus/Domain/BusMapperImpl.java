@@ -9,7 +9,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-04-29T14:48:06+0200",
+    date = "2022-04-29T17:17:27+0200",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 18 (Oracle Corporation)"
 )
 public class BusMapperImpl implements BusMapper {
