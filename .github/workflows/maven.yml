@@ -24,3 +24,12 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn clean install
+        
+    - name: Make tests
+      run: mvn -B test package jacoco:report -Dspring.profiles.active=test
+    - name: Upload to codecov
+      uses: codecov/codecov-action@v2
+      with:
+        token: 72c5039d-db83-450a-97cc-79bb9bda9eeb
+        directory: service/coverage/reports/
+        verbose: true  
