@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: backweb
+  datasource:
+    url: jdbc:mysql://localhost:3306/virtualtravelweb
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        instance-id: "${spring.application.name}-${random.uuid}"
+        health-check-path: /
+  rabbitmq:
+    addresses: localhost:5672
+server:
+  port: 0
+
