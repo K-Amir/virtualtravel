@@ -16,6 +16,7 @@
         <module>RabbitMQProducer</module>
     </modules>
 
+
     <dependencyManagement>
         <dependencies>
 
@@ -133,8 +134,12 @@
                         </execution>
                     </executions>
                 </plugin>
+
+
+
             </plugins>
         </pluginManagement>
+
 
         <plugins>
             <plugin>
@@ -147,41 +152,16 @@
                 </configuration>
             </plugin>
 
-            <!-- analysis -->
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.8</version>
-                <executions>
-                    <execution>
-                        <id>jacoco-initialize</id>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>jacoco-site</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
 
 
         </plugins>
     </build>
 
     <properties>
-        <jacoco.version>0.8.8</jacoco.version>
-        <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
-        <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
-        <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
-        <sonar.language>java</sonar.language>
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
+
+
     </properties>
 
 </project>

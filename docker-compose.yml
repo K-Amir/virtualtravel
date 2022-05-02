@@ -5,8 +5,12 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: root
-    ports:
-      - "3306:3306"
+  db2:
+    image: mysql
+    container_name: db2
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: root
   phpmyadmin:
     image: phpmyadmin
     container_name: pma
@@ -17,6 +21,16 @@ services:
       PMA_PORT: 3306
     ports:
       - "80:80"
+  phpmyadmin2:
+    image: phpmyadmin
+    container_name: pma2
+    links:
+      - db2
+    environment:
+      PMA_HOST: db2
+      PMA_PORT: 3306
+    ports:
+      - "82:80"
   consul:
     image: consul
     container_name: consul
@@ -28,3 +42,24 @@ services:
     ports:
       - "5672:5672"
       - "15672:15672"
+  gateway:
+    image: gateway
+    container_name: gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - consul
+  empresa:
+    image: empresa
+    container_name: empresa
+    depends_on:
+      - db2
+      - consul
+      - rabbitmq
+  web:
+    image: web
+    container_name: web
+    depends_on:
+      - db
+      - consul
+      - rabbitmq
