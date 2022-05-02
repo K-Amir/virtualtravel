@@ -10,11 +10,10 @@ import org.springframework.stereotype.Service;
 import javax.persistence.EntityNotFoundException;
 
 @Service
-public record AuthServiceImpl(UserJpaRepo userRepo, BCryptPasswordEncoder bCryptPasswordEncoder) implements AuthService {
+public record AuthServiceImpl(UserJpaRepo userRepo) implements AuthService {
 
     @Override
     public void save(AdminUsersEntity adminUsersEntity) {
-        adminUsersEntity.setPassword(bCryptPasswordEncoder.encode(adminUsersEntity.getPassword()));
         userRepo.save(adminUsersEntity);
     }
 
@@ -28,11 +27,5 @@ public record AuthServiceImpl(UserJpaRepo userRepo, BCryptPasswordEncoder bCrypt
         return userRepo.findById(email).orElseThrow(() -> new EntityNotFoundException("Not found user with the provided email"));
     }
 
-    @Override
-    public boolean isPasswordMatch(String password, String entityPassword) {
-        if(bCryptPasswordEncoder.matches(password, entityPassword)){
-            return  true;
-        }
-        throw new PasswordDoesNotMatchException("Provided credentials are not valid");
-    }
+
 }

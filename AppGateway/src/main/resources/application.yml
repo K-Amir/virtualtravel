@@ -5,7 +5,7 @@ spring:
     name: apigateway
   cloud:
     consul:
-      host: consul
+      host: localhost
       port: 8500
       discovery:
         instance-id: "${spring.application.name}-${server.port}-${spring.cloud.client.ip-address}"

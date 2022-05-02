@@ -6,6 +6,7 @@ import com.virtualtravel.empresa.Booking.Infrastructure.Jpa.BookingJpaRepository
 import com.virtualtravel.empresa.Bus.Domain.BusEntity;
 import com.virtualtravel.empresa.Bus.Domain.BusService;
 import com.virtualtravel.empresa.ErrorHandling.BusIncidenceExpcetion;
+import com.virtualtravel.empresa.ErrorHandling.NoSeatsAvailableException;
 import com.virtualtravel.empresa.Incidence.Domain.IncidenceEntity;
 import com.virtualtravel.empresa.Incidence.Domain.IncidenceService;
 import com.virtualtravel.empresa.Mail.Domain.MailService;
@@ -31,6 +32,10 @@ public record BookingServiceImpl(
         BusEntity busEntity = busService.findBusToBook(bookingEntity.getDate(), bookingEntity.getCity(), bookingEntity.getHour());
 
         bookingEntity.setBusEntity(busEntity);
+
+        if(busEntity.getAvailableSeats()<=0){
+            throw new NoSeatsAvailableException("The book seats are already full");
+        }
 
         BookingEntity bookingEntitySaved = bookingRepo.saveAndFlush(bookingEntity);
 
@@ -71,18 +76,21 @@ public record BookingServiceImpl(
 
         IncidenceEntity incidence = incidenceService.findIncidenceByBusId(busEntity.getId());
 
+        if(busEntity.getAvailableSeats()<=0){
+            mailService.sendCancellationEmail(bookingEntity, "Sorry but your travel has been cancelled due to insuficient seats");
+            rabbitMQProducer.send(busEntity, "bus", "sync.seats");
+            return;
+        }
+
 
         if (busHasNoIncidences(incidence)) {
             busService.decreaseAvailableSeats(busEntity);
             mailService.sendSuccessEmail(bookingEntity);
-
+            return;
         }
 
-        if (busHasIncidences(incidence)) {
-            mailService.sendCancellationEmail(bookingEntity, incidence.getReason());
-
-            rabbitMQProducer.send(busEntity, "bus-sync", "bus.sync");
-        }
+        mailService.sendCancellationEmail(bookingEntity, incidence.getReason());
+        rabbitMQProducer.send(busEntity, "bus", "sync.seats");
 
 
     }
@@ -94,7 +102,7 @@ public record BookingServiceImpl(
 
     @Override
     public BookingEntity findBookingEntityByEmailIsAndCityIsAndDateIsAndHourIs(String email, String city, Date date, String hour) {
-        return bookingRepo.findBookingEntityByEmailIsAndCityIsAndDateIsAndHourIs(email,city,date,hour);
+        return bookingRepo.findBookingEntityByEmailIsAndCityIsAndDateIsAndHourIs(email, city, date, hour);
     }
 
     private boolean busHasNoIncidences(IncidenceEntity incidence) {

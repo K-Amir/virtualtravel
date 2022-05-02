@@ -7,27 +7,42 @@ import com.virtualtravel.empresa.Auth.Domain.AuthService;
 import com.virtualtravel.empresa.Auth.Infrastructure.JwtUtil;
 import com.virtualtravel.empresa.ErrorHandling.SuccessDto;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("empresa/v0/auth")
-public record AuthController(AuthService authService, JwtUtil jwtUtil) {
+public record AuthController(
+        UserDetailsService userDetailsService,
+        JwtUtil jwtUtil,
+        AuthenticationManager authenticationManager,
+        AuthService authService,
+        BCryptPasswordEncoder bCryptPasswordEncoder
+) {
 
 
     @GetMapping("token")
-    public ResponseEntity<?> getJwtToken(@RequestHeader("user") String user, @RequestHeader("password") String password) {
-        AdminUsersEntity adminUsersEntity = authService.getByEmail(user);
+    public ResponseEntity<?> getJwtToken(@RequestHeader("user") String user, @RequestHeader("password") String password) throws Exception {
+        try {
+            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user, password));
+        } catch (AuthenticationException e) {
+            throw new Exception("Credentials are incorrect");
+        }
 
-        authService.isPasswordMatch(password, adminUsersEntity.getPassword());
-
-        AuthOutputDto output = new AuthOutputDto(jwtUtil.generateToken(user));
-
-        return ResponseEntity.ok(output);
+        UserDetails userDetails = userDetailsService.loadUserByUsername(user);
+        String jwtToken = jwtUtil.generateToken(userDetails);
+        return ResponseEntity.ok().body(jwtToken);
 
     }
 
     @PostMapping
     public ResponseEntity<SuccessDto> registerNewAdminUser(@RequestBody AdminUsersEntity adminUsersEntity) {
+        adminUsersEntity.setPassword(bCryptPasswordEncoder.encode(adminUsersEntity.getPassword()));
         authService.save(adminUsersEntity);
         return SuccessDto.send("User created successfully");
     }
@@ -35,8 +50,7 @@ public record AuthController(AuthService authService, JwtUtil jwtUtil) {
 
     @GetMapping("token/{token}")
     public ResponseEntity<?> checkToken(@PathVariable String token) {
-        jwtUtil.getSubject(token);
-
+        String subject =  jwtUtil.getSubject(token);
         return ResponseEntity.ok().body(true);
     }
 }

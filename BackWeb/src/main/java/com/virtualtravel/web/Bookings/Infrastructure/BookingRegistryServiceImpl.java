@@ -52,7 +52,7 @@ public class BookingRegistryServiceImpl implements BookingRegistryService {
         try {
             busService.findBusToBookAndDecreaseSeat(bookingFormInputDto.getDate(), bookingFormInputDto.getCity(), bookingFormInputDto.getHour());
             createBookingRegistry(bookingRegistryEntity);
-            rabbitMQProducer.send(bookingFormInputDto, "booking-exchange", "booking.com");
+            rabbitMQProducer.send(bookingFormInputDto, "bus", "register-booking");
 
 
         } catch (EntityNotFoundException ex) {

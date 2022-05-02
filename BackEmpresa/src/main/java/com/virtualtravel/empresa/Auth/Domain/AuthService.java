@@ -8,5 +8,5 @@ public interface AuthService {
 
     AdminUsersEntity getByEmail(String email);
 
-    boolean isPasswordMatch(String password, String password1);
+
 }

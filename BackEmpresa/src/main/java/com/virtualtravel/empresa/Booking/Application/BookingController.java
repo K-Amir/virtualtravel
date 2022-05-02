@@ -12,10 +12,9 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("empresa/v0/bookings")
-public record BookingController(BookingService bookingService, JwtUtil jwtUtil) {
+public record BookingController(BookingService bookingService) {
     @PostMapping
     public ResponseEntity<SuccessDto> createBooking(@RequestBody BookingFormInputDto bookingFormInputDto, @RequestHeader("Authorization") String auth){
-        jwtUtil.getSubject(auth);
         BookingEntity bookingEntity = BookingMapper.MAP.bookingInDtoToEntity(bookingFormInputDto);
         bookingService.createBooking(bookingEntity);
         return SuccessDto.send("Your booking has been registered successfully");
