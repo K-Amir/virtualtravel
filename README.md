@@ -134,7 +134,7 @@ _Note: lowerDate param is required the request are optional_
 
 ## Empresa - Endpoints
 ----
-#### Empresa Endpoint - 1
+#### Empresa Auth Endpoint - 1
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `POST`    | `empresa/v0/auth`         | Register a new admin user         |
@@ -154,7 +154,7 @@ _Note: lowerDate param is required the request are optional_
 <br />
 
 ----
-#### Empresa Endpoint - 2
+#### Empresa Auth Endpoint - 2
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `empresa/v0/auth/token`         | Returns the JWT Token after a correct log in         |
@@ -175,7 +175,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 <br />
 
 ----
-#### Empresa Endpoint - 3
+#### Empresa Auth Endpoint - 3
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `empresa/v0/auth/token/{token}`         | Returns 200 OK if the token is correct         |
@@ -188,7 +188,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 <br />
 <br />
 
-### The following endpoints all require this headers :
+### The following endpoints all require this headers 
 | Headers   | Description                               |
 | -------- | ---------------------------------------- |
 | `Authorization`    | The JWT token followed by Bearer prefix |
@@ -198,7 +198,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 
 
 ----
-#### Empresa Endpoint - 4
+#### Empresa Bus Endpoint - 4
 
 
 | Method   | URL                                      | Description                              |
@@ -222,7 +222,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 <br />
 
 ----
-#### Empresa Endpoint - 5
+#### Empresa Bus Endpoint - 5
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `empresa/v0/buses`         | Finds all the buses         |
@@ -255,7 +255,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 <br />
 
 ----
-#### Empresa Endpoint - 6
+#### Empresa Bus Endpoint - 6
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `empresa/v0/buses/{id}`         | Finds certain bus by id         |
@@ -270,3 +270,92 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
   "availableSeats": 40,
 }
 ````
+
+
+<br />
+<br />
+<br />
+<br />
+
+----
+#### Empresa Bus Endpoint - 7
+| Method   | URL                                      | Description                              |
+| -------- | ---------------------------------------- | ---------------------------------------- |
+| `DELETE`    | `empresa/v0/buses/{id}`         | Delete bus by certain id ( not recommended )   |
+
+_Method due to lack of implementation ( if there's users who booked for this bus no cancellation email will be sent )_
+
+
+<br />
+<br />
+<br />
+<br />
+
+----
+#### Empresa Booking Endpoint - 8
+| Method   | URL                                      | Description                              |
+| -------- | ---------------------------------------- | ---------------------------------------- |
+| `POST`    | `empresa/v0/bookings`         | Created a booking    |
+
+#### Same body as Web Booking Endpoint
+
+
+<br />
+<br />
+<br />
+<br />
+
+----
+#### Empresa Incidence Endpoint - 9
+| Method   | URL                                      | Description                              |
+| -------- | ---------------------------------------- | ---------------------------------------- |
+| `POST`    | `empresa/v0/incidences`         | Created an incidence    |
+
+_Note: If empresa does not work, use api/v0/incidences instead._
+
+#### Sample body
+```
+{
+    "bus_id" : 1,
+    "reason" : "Bad weather conditions",
+}
+```
+
+<br />
+<br />
+<br />
+<br />
+
+----
+#### Empresa Incidence Endpoint - 10
+| Method   | URL                                      | Description                              |
+| -------- | ---------------------------------------- | ---------------------------------------- |
+| `GET`    | `empresa/v0/incidences`         | Returns all the incidences    |
+| `GET`    | `empresa/v0/incidences/{id}`         | Returns specified incidence by id    |
+| `DELETE`    | `empresa/v0/incidences/{id}`         | Deletes incidence by id    |
+
+
+#### Sample response
+````
+[
+  {
+    "id" : 1,
+     "busId" 1,
+    "reason" : "Bad weather conditions",
+  },
+  {
+    "id" : 2,
+    "busId" 2,
+    "reason" : "Driver missing",
+  },
+  
+]
+````
+
+
+
+
+
+
+
+
