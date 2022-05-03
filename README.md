@@ -53,7 +53,7 @@ Those are the following endpoints of the application:
 
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
-| `GET`    | `/available/{city}?loweDate=30042022&upperDate=31042022&lowerHour=1900&upperHour=2000`| Get available bookings for a certain city|
+| `GET`    | `api/v0/bookings/available/{city}?loweDate=30042022&upperDate=31042022&lowerHour=1900&upperHour=2000`| Get available bookings for a certain city|
 
 | Param   | Description                               |
 | -------- | ---------------------------------------- |
@@ -82,13 +82,23 @@ _Note: lowerDate param is required the request are optional_
 ]
 ```
 ----
+| Method   | URL                                      | Description                              |
+| -------- | ---------------------------------------- | ---------------------------------------- |
+| `GET`    | `/api/v0/bookings/booked/{city}`         | Get the history of the bookings.         |
+
+| Param   | Description                               |
+| -------- | ---------------------------------------- |
+| `loweDate`    | The earliest date of the booking ( required ) |
+| `upperDate`    | The  latest of the booking |
+| `lowerHour`    | The earliest hour of the booking |
+| `upperHour`    | The latest hour of the booking |
+
+| Headers   | Description                               |
+| -------- | ---------------------------------------- |
+| `Authorization`    | Add the Jwt token followed the Bearer prefix |
 
 
+----
 
-| `GET`    | `/api/posts/28`                          | Retrieve post #28.                       |
-| `PATCH`  | `/api/posts/28`                          | Update data in post #28.                 |
-| `POST`   | `/api/posts/28/comments`                 | Add comment to post #28.                 |
-| `GET`    | `/api/posts/28/comments?status=approved&limit=10&page=4` | Retrieve page 4 of the comments for post #28 which are approved, with 10 comments per page. |
-| `DELETE` | `/api/posts/28/comments/1987` or `/api/comments/1987` | Delete comment #1987.                    |
-| `GET`    | `/api/users?active=true&sort=username&direction=asc&search=nodes` | Search for "nodes" in active users, sorted  by username ascendingly. |
+
 
