@@ -33,7 +33,7 @@ After it you will have  access to the app throught the gateway in the port 8080,
 
 Those are the following endpoints of the application:
 
-### Web - Endpoints
+## Web - Endpoints
 
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
@@ -125,7 +125,5 @@ _Note: lowerDate param is required the request are optional_
 <br />
 <br />
 
-----
-
-
+## Empresa - Endpoints
 
