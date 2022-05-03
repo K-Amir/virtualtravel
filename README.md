@@ -129,4 +129,32 @@ _Note: lowerDate param is required the request are optional_
 <br />
 
 ## Empresa - Endpoints
+| Method   | URL                                      | Description                              |
+| -------- | ---------------------------------------- | ---------------------------------------- |
+| `POST`    | `empresa/v0/auth`         | Register a new admin user         |
+
+#### Body
+```
+{
+    "email" : "admin@admin.admin",
+    "password" : "secret",
+}
+```
+
+
+<br />
+<br />
+<br />
+<br />
+
+----
+| Method   | URL                                      | Description                              |
+| -------- | ---------------------------------------- | ---------------------------------------- |
+| `GET`    | `empresa/v0/auth/token`         | Returns the JWT Token after a correct log in         |
+
+| Headers   | Description                               |
+| -------- | ---------------------------------------- |
+| `user`    | Specifies the username of the admin user |
+| `password`    |  Add the password for the admin user |
+
 
