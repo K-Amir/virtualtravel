@@ -21,7 +21,7 @@
 
 To run the application follow the next steps
 
-### Prerequisites
+### Running the containers
 
 Execute the following docker compose command to run the app in containers
   ```sh
