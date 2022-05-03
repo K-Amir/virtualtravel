@@ -107,6 +107,23 @@ _Note: lowerDate param is required the request are optional_
 | -------- | ---------------------------------------- |
 | `Authorization`    | Add the Jwt token followed the Bearer prefix |
 
+#### Sample response
+```
+[
+  {
+    "city" : "Madrid",
+    "name" : "Jhon",
+    "phone" : "00000000",
+    "email" : "jhon@doe.boot"
+    "date" : "30-04-2022",
+    "hour" : "19:30",
+  },
+]
+
+<br />
+<br />
+<br />
+<br />
 
 ----
 
