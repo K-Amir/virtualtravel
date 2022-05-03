@@ -208,6 +208,8 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `POST`    | `empresa/v0/buses`         | Creates a bus for a travel         |
 
+[Required Auth](#The-following-endpoints-all-require-this-headers)
+
 #### Sample body
 ```
 {
