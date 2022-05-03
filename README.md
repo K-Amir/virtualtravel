@@ -27,6 +27,7 @@ Execute the following docker compose command to run the app in containers
   ```sh
   docker compose up -d
   ```
+After it you will have  access to the app throught the gateway in the port 8080, and you will have two instances of backweb and backempresa
 
 ## Usage
 
