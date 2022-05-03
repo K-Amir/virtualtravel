@@ -37,7 +37,7 @@ Those are the following endpoints of the application:
 
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
-| `GET`    | `/api/posts`                             | Retrieve all posts.                      |
+| `POST`    | `/api/v0/bookings`                      | Create a new booking.                    |
 | `POST`   | `/api/posts`                             | Create a new post.                       |
 | `GET`    | `/api/posts/28`                          | Retrieve post #28.                       |
 | `PATCH`  | `/api/posts/28`                          | Update data in post #28.                 |
