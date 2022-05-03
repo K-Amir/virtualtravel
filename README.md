@@ -37,6 +37,7 @@ Those are the following endpoints of the application:
 <br />
 
 ## Web - Endpoints
+#### Web Endpoint - 1
 
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
@@ -58,6 +59,7 @@ Those are the following endpoints of the application:
 <br />
 
 ----
+#### Web Endpoint - 2
 
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
