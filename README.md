@@ -192,6 +192,11 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 | Headers   | Description                               |
 | -------- | ---------------------------------------- |
 | `Authorization`    | The JWT token followed by Bearer prefix |
+
+<br />
+<br />
+
+
 ----
 #### Empresa Endpoint - 4
 
@@ -211,3 +216,57 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 ```
 
 
+<br />
+<br />
+<br />
+<br />
+
+----
+#### Empresa Endpoint - 5
+| Method   | URL                                      | Description                              |
+| -------- | ---------------------------------------- | ---------------------------------------- |
+| `GET`    | `empresa/v0/buses`         | Finds all the buses         |
+
+#### Sample response
+````
+[
+  {
+    "id" : 1,
+    "hour": "19:30",
+    "date" : "03-05-2022",
+    "city" : "Madrid",
+    "availableSeats": 40,
+  },
+  {
+    "id" : 2,
+    "hour": "19:30",
+    "date" : "03-05-2022",
+    "city" : "Barcelona",
+    "availableSeats": 15,
+  },
+  
+]
+````
+
+
+<br />
+<br />
+<br />
+<br />
+
+----
+#### Empresa Endpoint - 6
+| Method   | URL                                      | Description                              |
+| -------- | ---------------------------------------- | ---------------------------------------- |
+| `GET`    | `empresa/v0/buses/{id}`         | Finds certain bus by id         |
+
+#### Sample response
+````
+{
+  "id" : 1,
+  "hour": "19:30",
+  "date" : "03-05-2022",
+  "city" : "Madrid",
+  "availableSeats": 40,
+}
+````
