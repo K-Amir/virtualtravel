@@ -119,7 +119,7 @@ _Note: lowerDate param is required the request are optional_
     "hour" : "19:30",
   },
 ]
-
+```
 <br />
 <br />
 <br />
