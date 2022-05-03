@@ -294,7 +294,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 
 [Required Auth](#The-following-endpoints-all-require-this-headers)
 
-_Method due to lack of implementation ( if there's users who booked for this bus no cancellation email will be sent )_
+
 
 
 <br />
@@ -326,7 +326,7 @@ _Method due to lack of implementation ( if there's users who booked for this bus
 
 [Required Auth](#The-following-endpoints-all-require-this-headers)
 
-_Note: If empresa does not work, use api/v0/incidences instead._
+_Note: Do not created 2 incidences for the same bus, or the system will fail :( ._
 
 #### Sample body
 ```
