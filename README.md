@@ -326,7 +326,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 
 [Required Auth](#The-following-endpoints-all-require-this-headers)
 
-_Note: Do not created 2 incidences for the same bus, or the system will fail :( ._
+_Note: Do not create 2 incidences for the same bus, or the system will fail ☹️  ._
 
 #### Sample body
 ```
