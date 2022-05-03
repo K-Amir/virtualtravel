@@ -39,7 +39,19 @@ Those are the following endpoints of the application:
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `POST`    | `/api/v0/bookings`                      | Create a new booking.                    |
 
-ojo
+#### Body
+```
+{
+    "city" : "Madrid",
+    "name" : "Jhon Doe",
+    "phone" : "000000000",
+    "email" : "jhon@doe.boot",
+    "date" : "30-04-2022",
+    "hour" : "19:30"
+}
+
+| Method   | URL                                      | Description                              |
+| -------- | ---------------------------------------- | ---------------------------------------- |
 | `POST`   | `/api/posts`                             | Create a new post.                       |
 | `GET`    | `/api/posts/28`                          | Retrieve post #28.                       |
 | `PATCH`  | `/api/posts/28`                          | Update data in post #28.                 |
