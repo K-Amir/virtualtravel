@@ -38,7 +38,6 @@ Those are the following endpoints of the application:
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `POST`    | `/api/v0/bookings`                      | Create a new booking.                    |
-
 #### Body
 ```
 {
@@ -51,9 +50,31 @@ Those are the following endpoints of the application:
 }
 ```
 
+
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
-| `POST`   | `/api/posts`                             | Create a new post.                       |
+| `GET`    | `/available/{city}`                      | Get available bookings for a certain city|
+#### Sample response
+```
+[
+  {
+    "destinationCity" : "Madrid",
+    "departmentDate" : "30-04-2022",
+    "departmentHour" : "19:30",
+    "seatsAvailable" : 40
+  },
+  {
+  "destinationCity" : "Madrid",
+  "departmentDate" : "30-04-2022",
+  "departmentHour" : "19:30",
+  "seatsAvailable" : 40
+}
+]
+```
+
+
+
+
 | `GET`    | `/api/posts/28`                          | Retrieve post #28.                       |
 | `PATCH`  | `/api/posts/28`                          | Update data in post #28.                 |
 | `POST`   | `/api/posts/28/comments`                 | Add comment to post #28.                 |
