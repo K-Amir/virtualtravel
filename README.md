@@ -188,11 +188,14 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 <br />
 <br />
 
-### The following endpoints all require this headers
+
+### ATENTION!! ⚠ ⚠ ⚠ ⚠ The following endpoints all require this headers
 | Headers   | Description                               |
 | -------- | ---------------------------------------- |
 | `Authorization`    | The JWT token followed by Bearer prefix |
 
+<br />
+<br />
 <br />
 <br />
 
@@ -226,6 +229,8 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `empresa/v0/buses`         | Finds all the buses         |
+
+[Required Auth](#The-following-endpoints-all-require-this-headers)
 
 #### Sample response
 ````
@@ -285,6 +290,8 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `DELETE`    | `empresa/v0/buses/{id}`         | Delete bus by certain id ( not recommended )   |
 
+[Required Auth](#The-following-endpoints-all-require-this-headers)
+
 _Method due to lack of implementation ( if there's users who booked for this bus no cancellation email will be sent )_
 
 
@@ -299,6 +306,8 @@ _Method due to lack of implementation ( if there's users who booked for this bus
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `POST`    | `empresa/v0/bookings`         | Created a booking    |
 
+[Required Auth](#The-following-endpoints-all-require-this-headers)
+
 #### Same body as Web Booking Endpoint
 
 
@@ -312,6 +321,8 @@ _Method due to lack of implementation ( if there's users who booked for this bus
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `POST`    | `empresa/v0/incidences`         | Created an incidence    |
+
+[Required Auth](#The-following-endpoints-all-require-this-headers)
 
 _Note: If empresa does not work, use api/v0/incidences instead._
 
@@ -336,6 +347,7 @@ _Note: If empresa does not work, use api/v0/incidences instead._
 | `GET`    | `empresa/v0/incidences/{id}`         | Returns specified incidence by id    |
 | `DELETE`    | `empresa/v0/incidences/{id}`         | Deletes incidence by id    |
 
+[Required Auth](#The-following-endpoints-all-require-this-headers)
 
 #### Sample response
 ````
@@ -365,6 +377,8 @@ _Note: If empresa does not work, use api/v0/incidences instead._
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `empresa/v0/mails`         | Get the sent emails between a specified date    |
+
+[Required Auth](#The-following-endpoints-all-require-this-headers)
 
 | Param   | Description                               |
 | -------- | ---------------------------------------- |
