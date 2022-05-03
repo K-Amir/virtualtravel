@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="#">
-    <img src="https://w7.pngwing.com/pngs/37/147/png-transparent-airport-bus-coach-tour-bus-service-public-transport-bus-service-bus-angle-logo-school-bus.png" alt="Logo" width="80" height="80">
+    <img src="https://w7.pngwing.com/pngs/37/147/png-transparent-airport-bus-coach-tour-bus-service-public-transport-bus-service-bus-angle-logo-school-bus.png" alt="Logo" >
   </a>
   <h3 align="center">VIRTUALTRAVEL</h3>
   <p align="center">
