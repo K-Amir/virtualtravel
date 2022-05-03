@@ -27,3 +27,8 @@ Execute the following docker compose command to run the app in containers
   ```sh
   docker compose up -d
   ```
+
+## Usage
+
+Those are the following endpoints of the application:
+
