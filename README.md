@@ -55,6 +55,13 @@ Those are the following endpoints of the application:
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `/available/{city}?loweDate=30042022&upperDate=31042022&lowerHour=1900&upperHour=2000`| Get available bookings for a certain city|
 
+| Param   | Description                               |
+| -------- | ---------------------------------------- |
+| `loweDate`    | The earliest date of the booking ( required ) |
+| `upperDate`    | The  latest of the booking |
+| `lowerHour`    | The earliest hour of the booking |
+| `upperHour`    | The latest hour of the booking |
+
 
 _Note: lowerDate param is required the request are optional_
 #### Sample response
