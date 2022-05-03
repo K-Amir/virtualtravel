@@ -42,23 +42,37 @@ services:
     ports:
       - "5672:5672"
       - "15672:15672"
-  gateway:
-    image: gateway
-    container_name: gateway
+  appgateway:
+    image: skhalilov/khalilovgateway
+    container_name: khalilovagateway
     ports:
       - "8080:8080"
     depends_on:
       - consul
-  empresa:
-    image: empresa
-    container_name: empresa
+  khalilovempresa1:
+    image: skhalilov/khalilovempresa
+    container_name: khalilovempresa1
     depends_on:
       - db2
       - consul
       - rabbitmq
-  web:
-    image: web
-    container_name: web
+  khalilovempresa2:
+    image: skhalilov/khalilovempresa
+    container_name: khalilovempresa2
+    depends_on:
+      - db2
+      - consul
+      - rabbitmq
+  khalilovweb:
+    image: skhalilov/khalilovweb
+    container_name: khalilovweb
+    depends_on:
+      - db
+      - consul
+      - rabbitmq
+  khalilovweb2:
+    image: skhalilov/khalilovweb
+    container_name: khalilovweb2
     depends_on:
       - db
       - consul
