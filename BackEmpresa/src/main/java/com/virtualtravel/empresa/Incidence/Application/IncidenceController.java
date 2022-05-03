@@ -12,6 +12,7 @@ import com.virtualtravel.empresa.Mail.Domain.MailService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -19,7 +20,7 @@ import java.util.List;
 public record IncidenceController(IncidenceService incidenceService, BookingService bookingService, MailService mailService) {
 
     @PostMapping
-    public ResponseEntity<SuccessDto> createIncidence(@RequestBody IncidenceInputDto incidenceInputDto){
+    public ResponseEntity<SuccessDto> createIncidence(@RequestBody @Valid IncidenceInputDto incidenceInputDto){
         IncidenceEntity incidenceEntity = IncidenceMapper.MAPPER.incidenceInputToEntity(incidenceInputDto);
         incidenceService.save(incidenceEntity, incidenceInputDto.getBus_id());
         sendCancellationMails(bookingService.findBookingEntitiesByBusEntity_Id(incidenceInputDto.getBus_id()), incidenceEntity);

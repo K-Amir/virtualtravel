@@ -20,7 +20,7 @@ services:
       PMA_HOST: db
       PMA_PORT: 3306
     ports:
-      - "80:80"
+      - "81:80"
   phpmyadmin2:
     image: phpmyadmin
     container_name: pma2

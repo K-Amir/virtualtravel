@@ -10,6 +10,7 @@ import com.virtualtravel.empresa.ErrorHandling.SuccessDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -18,7 +19,7 @@ public record BusController(BusService busService) {
 
     //TODO: All in empresa require auth
     @PostMapping()
-    public ResponseEntity<SuccessDto> saveBus(@RequestBody BusInputDto busInputDto) {
+    public ResponseEntity<SuccessDto> saveBus(@RequestBody @Valid BusInputDto busInputDto) {
         BusEntity busEntity = BusMapper.MAP.inputDtoToEntity(busInputDto);
         busService.createBus(busEntity);
         return SuccessDto.send("Bus created successfully :) !");
