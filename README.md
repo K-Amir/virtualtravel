@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="#">
-    <img src="https://sc04.alicdn.com/kf/UTB8VHyqoL2JXKJkSanr7613lVXaw.png" width="80" alt="Logo" >
+    <img src="https://sc04.alicdn.com/kf/UTB8VHyqoL2JXKJkSanr7613lVXaw.png" width="180" alt="Logo" >
   </a>
   <h3 align="center">VIRTUALTRAVEL</h3>
   <p align="center">
