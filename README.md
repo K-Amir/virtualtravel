@@ -37,6 +37,7 @@ Those are the following endpoints of the application:
 <br />
 
 ## Web - Endpoints
+----
 #### Web Endpoint - 1
 
 | Method   | URL                                      | Description                              |
@@ -97,6 +98,7 @@ _Note: lowerDate param is required the request are optional_
 <br />
 
 ----
+#### Web Endpoint - 3
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `/api/v0/bookings/booked/{city}`         | Get the history of the bookings.         |
@@ -131,6 +133,8 @@ _Note: lowerDate param is required the request are optional_
 <br />
 
 ## Empresa - Endpoints
+----
+#### Empresa Endpoint - 1
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `POST`    | `empresa/v0/auth`         | Register a new admin user         |
@@ -150,6 +154,7 @@ _Note: lowerDate param is required the request are optional_
 <br />
 
 ----
+#### Empresa Endpoint - 2
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `empresa/v0/auth/token`         | Returns the JWT Token after a correct log in         |
@@ -170,6 +175,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 <br />
 
 ----
+#### Empresa Endpoint - 3
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `empresa/v0/auth/token/{token}`         | Returns 200 OK if the token is correct         |
@@ -187,6 +193,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 | -------- | ---------------------------------------- |
 | `Authorization`    | The JWT token followed by Bearer prefix |
 ----
+#### Empresa Endpoint - 4
 
 
 | Method   | URL                                      | Description                              |
