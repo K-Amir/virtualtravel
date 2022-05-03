@@ -5,7 +5,7 @@ on:
       - master # or the name of your main branch
 
 jobs:
-  build:
+  test:
     name: Build and testing
     runs-on: ubuntu-latest
     steps:
