@@ -353,7 +353,43 @@ _Note: If empresa does not work, use api/v0/incidences instead._
 ````
 
 
+<br />
+<br />
+<br />
+<br />
 
+----
+#### Empresa Mail Endpoint - 11
+| Method   | URL                                      | Description                              |
+| -------- | ---------------------------------------- | ---------------------------------------- |
+| `GET`    | `empresa/v0/mails`         | Get the sent emails between a specified date    |
+
+| Param   | Description                               |
+| -------- | ---------------------------------------- |
+| `loweDate`    | The earliest date of the booking ( required ) |
+| `upperDate`    | The  latest of the booking (required) |
+| `lowerHour`    | The earliest hour of the booking |
+| `upperHour`    | The latest hour of the booking |
+
+
+#### Sample response
+````
+[
+  {
+     "destinationCity" : "Madrid",
+     "email" "Congrats, blah blah blah...",
+     "bookingHour" : "19:30",
+     "bookingDate" : "03-05-2022"
+  },
+  {
+     "destinationCity" : "Madrid",
+     "email" "Congrats, blah blah blah...",
+     "bookingHour" : "19:30",
+     "bookingDate" : "03-05-2022"
+  },
+  
+]
+````
 
 
 
