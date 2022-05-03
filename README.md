@@ -133,7 +133,7 @@ _Note: lowerDate param is required the request are optional_
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `POST`    | `empresa/v0/auth`         | Register a new admin user         |
 
-#### Body
+#### Sample body
 ```
 {
     "email" : "admin@admin.admin",
@@ -157,7 +157,10 @@ _Note: lowerDate param is required the request are optional_
 | `user`    | Specifies the username of the admin user |
 | `password`    |  Add the password for the admin user |
 
-
+#### Sample response
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+```
 
 <br />
 <br />
@@ -187,4 +190,15 @@ _Note: lowerDate param is required the request are optional_
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `POST`    | `empresa/v0/buses`         | Creates a bus for a travel         |
+
+#### Sample body
+```
+{
+    "city" : "Madrid",
+    "date" : "30-04-2022",
+    "hour" : "19:30",
+    "availableSeats: 40
+}
+```
+
 
