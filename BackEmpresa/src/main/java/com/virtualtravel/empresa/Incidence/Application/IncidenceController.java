@@ -16,7 +16,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v0/incidences")
+@RequestMapping("empresa/v0/incidences")
 public record IncidenceController(IncidenceService incidenceService, BookingService bookingService, MailService mailService) {
 
     @PostMapping
