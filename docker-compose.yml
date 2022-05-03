@@ -5,13 +5,13 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: 'virtualweb'
+      MYSQL_DATABASE: 'virtualtravelweb'
   db2:
     image: mysql
     container_name: db2
     command: --default-authentication-plugin=mysql_native_password
     environment:
-      MYSQL_DATABASE: 'virtualempresa'
+      MYSQL_DATABASE: 'virtualtravelempresa'
       MYSQL_ROOT_PASSWORD: root
   phpmyadmin:
     image: phpmyadmin
