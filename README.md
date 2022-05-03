@@ -49,7 +49,7 @@ Those are the following endpoints of the application:
     "hour" : "19:30"
 }
 ```
-
+----
 
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
