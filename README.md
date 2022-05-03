@@ -158,3 +158,33 @@ _Note: lowerDate param is required the request are optional_
 | `password`    |  Add the password for the admin user |
 
 
+
+<br />
+<br />
+<br />
+<br />
+
+----
+| Method   | URL                                      | Description                              |
+| -------- | ---------------------------------------- | ---------------------------------------- |
+| `GET`    | `empresa/v0/auth/token/{token}`         | Returns 200 OK if the token is correct         |
+
+
+
+
+<br />
+<br />
+<br />
+<br />
+
+### The following endpoints all require this headers :
+| Headers   | Description                               |
+| -------- | ---------------------------------------- |
+| `Authorization`    | The JWT token followed by Bearer prefix |
+----
+
+
+| Method   | URL                                      | Description                              |
+| -------- | ---------------------------------------- | ---------------------------------------- |
+| `POST`    | `empresa/v0/buses`         | Creates a bus for a travel         |
+
