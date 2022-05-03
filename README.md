@@ -54,6 +54,8 @@ Those are the following endpoints of the application:
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `/available/{city}?loweDate=30042022&upperDate=31042022&lowerHour=1900&upperHour=2000`| Get available bookings for a certain city|
+
+
 _Note: lowerDate param is required the request are optional_
 #### Sample response
 ```
