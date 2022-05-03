@@ -49,10 +49,10 @@ Those are the following endpoints of the application:
     "hour" : "19:30"
 }
 ```
-
-
-
-
+<br />
+<br />
+<br />
+<br />
 ----
 
 | Method   | URL                                      | Description                              |
@@ -85,10 +85,10 @@ _Note: lowerDate param is required the request are optional_
 }
 ]
 ```
-
-
-
-
+<br />
+<br />
+<br />
+<br />
 ----
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
