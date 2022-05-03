@@ -188,7 +188,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 <br />
 <br />
 
-### The following endpoints all require this headers 
+### The following endpoints all require this headers(#auth-required)
 | Headers   | Description                               |
 | -------- | ---------------------------------------- |
 | `Authorization`    | The JWT token followed by Bearer prefix |
@@ -259,6 +259,8 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `empresa/v0/buses/{id}`         | Finds certain bus by id         |
+
+[Required Auth](#auth-required)
 
 #### Sample response
 ````
