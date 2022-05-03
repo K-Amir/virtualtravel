@@ -49,6 +49,7 @@ Those are the following endpoints of the application:
     "date" : "30-04-2022",
     "hour" : "19:30"
 }
+```
 
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
