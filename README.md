@@ -64,11 +64,11 @@ Those are the following endpoints of the application:
 
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
-| `GET`    | `api/v0/bookings/available/{city}?loweDate=30042022&upperDate=31042022&lowerHour=1900&upperHour=2000`| Get available bookings for a certain city|
+| `GET`    | `api/v0/bookings/available/{city}?lowerDate=30042022&upperDate=31042022&lowerHour=1900&upperHour=2000`| Get available bookings for a certain city|
 
 | Param   | Description                               |
 | -------- | ---------------------------------------- |
-| `loweDate`    | The earliest date of the booking ( required ) |
+| `lowerDate`    | The earliest date of the booking ( required ) |
 | `upperDate`    | The  latest of the booking |
 | `lowerHour`    | The earliest hour of the booking |
 | `upperHour`    | The latest hour of the booking |
@@ -105,7 +105,7 @@ _Note: lowerDate param is required the request are optional_
 
 | Param   | Description                               |
 | -------- | ---------------------------------------- |
-| `loweDate`    | The earliest date of the booking ( required ) |
+| `lowerDate`    | The earliest date of the booking ( required ) |
 | `upperDate`    | The  latest of the booking |
 | `lowerHour`    | The earliest hour of the booking |
 | `upperHour`    | The latest hour of the booking |
@@ -384,7 +384,7 @@ _Note: Do not create 2 incidences for the same bus, or the system will fail â˜¹ï
 
 | Param   | Description                               |
 | -------- | ---------------------------------------- |
-| `loweDate`    | The earliest date of the booking ( required ) |
+| `lowerDate`    | The earliest date of the booking ( required ) |
 | `upperDate`    | The  latest of the booking (required) |
 | `lowerHour`    | The earliest hour of the booking |
 | `upperHour`    | The latest hour of the booking |
